@@ -1,5 +1,7 @@
 package kipohaDS.config;
 
+import kipohaDS.Listeners.Buttons.Buttons;
+import kipohaDS.Listeners.Events.Event;
 import kipohaDS.Listeners.SlashCommands.SlashCommands;
 import kipohaDS.add_commands.CommandsAdd;
 import net.dv8tion.jda.api.JDA;
@@ -16,7 +18,7 @@ public class Bot {
         }
         JDA bot = JDABuilder.createDefault(token)
                 .setActivity(Activity.customStatus("Hello java"))
-                .addEventListeners(new SlashCommands())
+                .addEventListeners(new SlashCommands(), new Buttons(), new Event())
                 .enableIntents(GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS))
                 .build();
         new CommandsAdd().AddCommands(bot);

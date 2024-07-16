@@ -26,6 +26,8 @@ public class SlashCommands extends ListenerAdapter {
             case "ban":
                 new Ban().callback(event);
                 break;
+            case "buttontest":
+                new ButtonTest().callback(event);
             default:
                 break;
         }
