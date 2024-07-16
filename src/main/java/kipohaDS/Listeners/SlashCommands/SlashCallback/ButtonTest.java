@@ -10,7 +10,8 @@ public class ButtonTest {
         event.reply("cake so sweaty?")
             .addActionRow(
                     Button.success("yes:"+userId, "Yes"),
-                    Button.danger("no:"+userId, "No")
+                    Button.danger("no:"+userId, "No"),
+                    Button.secondary("test", "test")
             )
             .queue();
     }
