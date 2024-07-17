@@ -6,6 +6,6 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 public class Event extends ListenerAdapter {
     @Override
     public void onGenericMessage(GenericMessageEvent event) {
-
+//        event.getChannel().sendMessage("hello").queue();
     }
 }

@@ -30,7 +30,9 @@ public class CommandsAdd {
                         .addOption(OptionType.INTEGER, "time", "times", true)
                         .addOption(OptionType.STRING, "reason", "reason", true),
                 //
-                Commands.slash("buttontest", "buttons")
+                Commands.slash("buttontest", "buttons"),
+                //
+                Commands.slash("modal", "modaltest")
                 //
         ).queue();
     }

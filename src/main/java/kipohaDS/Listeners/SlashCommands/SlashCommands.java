@@ -28,6 +28,10 @@ public class SlashCommands extends ListenerAdapter {
                 break;
             case "buttontest":
                 new ButtonTest().callback(event);
+                break;
+            case "modal":
+                new Modal().callback(event);
+                break;
             default:
                 break;
         }
