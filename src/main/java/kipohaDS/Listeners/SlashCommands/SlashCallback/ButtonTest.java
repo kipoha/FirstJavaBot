@@ -1,10 +1,11 @@
 package kipohaDS.Listeners.SlashCommands.SlashCallback;
 
-import net.dv8tion.jda.api.entities.emoji.Emoji;
+import kipohaDS.Listeners.SlashCommands.SlashCore;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 
-public class ButtonTest {
+public class ButtonTest extends SlashCore {
+    @Override
     public void callback(SlashCommandInteractionEvent event) {
         long userId = event.getUser().getIdLong();
         event.reply("cake so sweaty?")

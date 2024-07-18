@@ -59,7 +59,10 @@ public class Buttons extends ListenerAdapter {
                         .addComponents(ActionRow.of(text1), ActionRow.of(text2))
                         .build();
                 event.replyModal(modal).queue();
-
+                break;
+            case "foodsbutton":
+                event.reply("foodsbutton").queue();
+                break;
             default:
                 event.reply("Unknown button.")
                         .setEphemeral(true)

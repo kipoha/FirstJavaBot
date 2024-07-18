@@ -1,6 +1,5 @@
 package kipohaDS.Listeners.Modals;
 
-import kipohaDS.config.Bot;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.ModalInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;

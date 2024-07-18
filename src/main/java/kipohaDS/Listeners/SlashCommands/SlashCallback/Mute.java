@@ -1,12 +1,14 @@
 package kipohaDS.Listeners.SlashCommands.SlashCallback;
 
+import kipohaDS.Listeners.SlashCommands.SlashCore;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 
 import java.time.Duration;
 
-public class Mute {
+public class Mute extends SlashCore {
+    @Override
     public void callback(SlashCommandInteractionEvent event) {
         OptionMapping optionMember = event.getOption("member");
         OptionMapping optionTime = event.getOption("time");

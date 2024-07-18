@@ -1,11 +1,13 @@
 package kipohaDS.Listeners.SlashCommands.SlashCallback;
 
+import kipohaDS.Listeners.SlashCommands.SlashCore;
 import net.dv8tion.jda.api.entities.channel.ChannelType;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 
-public class SayInChannel {
+public class SayInChannel extends SlashCore {
+    @Override
     public void callback(SlashCommandInteractionEvent event){
         OptionMapping channelOption = event.getOption("channel");
         if (channelOption != null && channelOption.getChannelType() == ChannelType.TEXT) {
