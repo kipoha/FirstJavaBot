@@ -1,11 +1,8 @@
 package kipohaDS.Listeners.Buttons;
 
+import kipohaDS.Listeners.Buttons.ButtonCallback.*;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.interactions.components.ActionRow;
-import net.dv8tion.jda.api.interactions.components.text.TextInput;
-import net.dv8tion.jda.api.interactions.components.text.TextInputStyle;
-import net.dv8tion.jda.api.interactions.modals.Modal;
 
 public class Buttons extends ListenerAdapter {
     @Override
@@ -31,37 +28,19 @@ public class Buttons extends ListenerAdapter {
         }
         switch (buttonId) {
             case "yes":
-                event.reply("yes")
-                        .setEphemeral(true)
-                        .queue();
+                new YesButton().callback(event);
                 break;
             case "no":
-                event.reply("no")
-                        .setEphemeral(true)
-                        .queue();
+                new NoButton().callback(event);
                 break;
             case "test":
-                event.reply("test")
-                        .queue();
+                new TestButton().callback(event);
                 break;
             case "modalbutton":
-                TextInput text1 = TextInput.create("tt1", "Name", TextInputStyle.SHORT)
-                        .setPlaceholder("This is a placeholder")
-                        .setRequired(true)
-                        .setMaxLength(100)
-                        .build();
-                TextInput text2 = TextInput.create("tt2", "Description", TextInputStyle.PARAGRAPH)
-                        .setPlaceholder("This is a placeholder2")
-                        .setRequired(false)
-                        .setMaxLength(500)
-                        .build();
-                Modal modal = Modal.create("modaltext1", "Modal")
-                        .addComponents(ActionRow.of(text1), ActionRow.of(text2))
-                        .build();
-                event.replyModal(modal).queue();
+                new ModalButton().callback(event);
                 break;
             case "foodsbutton":
-                event.reply("foodsbutton").queue();
+                new FoodsButton().callback(event);
                 break;
             default:
                 event.reply("Unknown button.")

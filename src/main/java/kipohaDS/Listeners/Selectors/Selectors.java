@@ -1,5 +1,6 @@
 package kipohaDS.Listeners.Selectors;
 
+import kipohaDS.Listeners.Selectors.SelectCallback.*;
 import net.dv8tion.jda.api.events.interaction.component.StringSelectInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -8,8 +9,7 @@ public class Selectors extends ListenerAdapter {
     public void onStringSelectInteraction(StringSelectInteractionEvent event) {
         switch (event.getComponentId()) {
             case "foods":
-                String value = event.getValues().get(0);
-                event.reply("Foods: " + value).setEphemeral(true).queue();
+                new FoodsSelect().callback(event);
                 break;
             default:
                 break;
